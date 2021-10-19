@@ -17,6 +17,9 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install pylint
         uses: BSFishy/pip-action@v1
+        with:
+          packages: |
+            pylint
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
       - name: Run tests
