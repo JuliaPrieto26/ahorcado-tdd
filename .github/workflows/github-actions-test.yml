@@ -3,12 +3,12 @@ on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    
+
     strategy:
       matrix:
         # Run in all these versions of Python
         python-version: [3.6, 3.9]
-    
+
     steps:
       # Checkout the latest code from the repo
       - name: Checkout repo
@@ -24,3 +24,7 @@ jobs:
       # Run the tests. I'm using pytest and the file is in the tests directory.
       - name: Run tests
         run: python test_ahorcado.py
+      - name: Run static code analyzer on Ahorcado class
+        run: pylint ahorcado.py
+      - name: Run static code analyzer on test classes
+        run: pylint test_ahorcado.py
