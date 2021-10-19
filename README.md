@@ -1,4 +1,1 @@
-Correr los tests con
-```
-python test_ahorcado.py
-```
+![Tests](https://github.com/agustindangelo/ahorcado-tdd/actions/workflows/github-actions.yml/badge.svg)
