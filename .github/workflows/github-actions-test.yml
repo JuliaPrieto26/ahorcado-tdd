@@ -13,18 +13,20 @@ jobs:
       # Checkout the latest code from the repo
       - name: Checkout repo
         uses: actions/checkout@v2
-      # Setup which version of Python to use
       - name: Set Up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      # Display the Python version being used
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
-      # Run the tests. I'm using pytest and the file is in the tests directory.
+      - run: python main.py
       - name: Run tests
         run: python test_ahorcado.py
       - name: Run static code analyzer on Ahorcado class
         run: pylint ahorcado.py
       - name: Run static code analyzer on test classes
+        uses: BSFishy/pip-action@v1
+        with:
+          packages: |
+            pylint
         run: pylint test_ahorcado.py
