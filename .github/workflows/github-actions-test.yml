@@ -19,7 +19,6 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
-      - run: python main.py
       - name: Run tests
         run: python test_ahorcado.py
       - name: Run static code analyzer on Ahorcado class
