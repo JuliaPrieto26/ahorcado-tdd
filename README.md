@@ -1,1 +1,1 @@
-![Main workflow](https://github.com/github/docs/actions/workflows/github-actions.yml/badge.svg)
+![Tests](https://github.com/agustindangelo/ahorcado-tdd/actions/workflows/github-actions.yml/badge.svg)
