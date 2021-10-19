@@ -15,22 +15,13 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
+      - name: Install pylint
+        uses: BSFishy/pip-action@v1
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
       - name: Run tests
         run: python test_ahorcado.py
-
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v1
-      - uses: BSFishy/pip-action@v1
       - name: Run static code analyzer on test classes
-        with:
-          packages: |
-            pylint
         run: pylint test_ahorcado.py
       - name: Run static code analyzer on ahorcado classes
-        with:
-          packages: |
-            pylint
         run: pylint ahorcado.py
