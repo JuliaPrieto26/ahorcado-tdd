@@ -117,7 +117,6 @@ class TestArriesgarLetra(unittest.TestCase):
         ahorcado.login('juan')
         ahorcado.set_palabra('agiles')
         ahorcado.arriesgar_una_letra('a')
-        ahorcado.arriesgar_una_letra('n')
         ahorcado.arriesgar_una_letra('r')
         ahorcado.arriesgar_una_letra('p')
         self.assertEqual(ahorcado.get_letras_erroneas(), 'n r p')
