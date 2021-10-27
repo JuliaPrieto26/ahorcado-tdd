@@ -10,8 +10,5 @@
 # -- STEP 2: Instalar paquetes requeridos de Python
 '''$ pip install -r py.requirements/all.txt'''
 
-#### Correr los tests unitarios
-'''python tests/test_ahorcado.py'''
-
-#### Correr los tests de aceptación
-'''invoke test'''
+#### Correr los tests unitarios y los tests de aceptación
+'''tox'''
