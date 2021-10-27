@@ -2,11 +2,13 @@
 
 #### Crear un entorno virtual
 Linux:
+
 '''$ virtualenv --python python3 .venv
    $ source .venv/bin/activate
 '''
 
 Windows:
+
 '''call .venv/Scripts/activate'''
 
 #### Instalar paquetes requeridos de Python
