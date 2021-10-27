@@ -18,11 +18,8 @@ jobs:
       - name: Install pylint
         uses: BSFishy/pip-action@v1
         with:
-          packages: |
-            pylint
-          requirements: |
-            py.requirements/all.txt
-            ahorcado
+          packages: ahorcado pylint
+          requirements: py.requirements/all.txt
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
       - name: Run unit tests
