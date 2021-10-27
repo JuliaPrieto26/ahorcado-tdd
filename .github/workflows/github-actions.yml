@@ -1,7 +1,7 @@
 name: Github Actions for testing and linting
 on: [push]
 jobs:
-  Tests and linting:
+  tests_and_linting:
     runs-on: ubuntu-latest
 
     strategy:
