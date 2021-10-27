@@ -1,5 +1,5 @@
 import unittest
-from ahorcado import Ahorcado
+from ahorcado.ahorcado import Ahorcado
 
 class TestLoginMethods(unittest.TestCase):
 

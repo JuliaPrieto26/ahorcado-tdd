@@ -20,11 +20,14 @@ jobs:
         with:
           packages: |
             pylint
+          requirements: py.requirements/all.txt
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
-      - name: Run tests
-        run: python test_ahorcado.py
-      - name: Run static code analyzer on test classes
-        run: pylint --exit-zero test_ahorcado.py
-      - name: Run static code analyzer on ahorcado classes
-        run: pylint --exit-zero ahorcado.py
+      - name: Run unit tests
+        run: python tests/test_ahorcado.py
+      - name: Run acceptance tests
+        run: invoke test
+      - name: Run static code analyzer on Ahorcado package
+        run: pylint --exit-zero src
+      - name: Run static code analyzer on unit tests
+        run: pylint --exit-zero tests/test_ahorcado.py
