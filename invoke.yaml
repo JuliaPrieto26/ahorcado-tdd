@@ -22,8 +22,3 @@ behave_test:
     scopes:
       - features
     args: features
-    # scopes:
-    #   - features
-    #   - datatype.features
-    #   - step_matcher.features
-    # args: features datatype.features step_matcher.features

@@ -69,6 +69,6 @@ setup(
         "Topic :: Documentation",
         "Topic :: Education",
     ],
-    packages=find_packages('src'),
+    packages=find_packages('ahorcado'),
     zip_safe = True,
 )
