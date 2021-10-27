@@ -3,9 +3,8 @@
 #### Crear un entorno virtual
 Linux:
 
-'''$ virtualenv --python python3 .venv
-   $ source .venv/bin/activate
-'''
+'''$ virtualenv --python python3 .venv'''
+'''$ source .venv/bin/activate'''
 
 Windows:
 
