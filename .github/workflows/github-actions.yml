@@ -1,12 +1,12 @@
-name: GitHub Actions Demo
+name: Github Actions for testing and linting
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  Integración:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        python-version: [3.6, 3.9]
+        python-version: [3.9]
 
     steps:
       - name: Checkout repo
@@ -20,7 +20,9 @@ jobs:
         with:
           packages: |
             pylint
-          requirements: py.requirements/all.txt
+          requirements: |
+            py.requirements/all.txt
+            ahorcado
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
       - name: Run unit tests
