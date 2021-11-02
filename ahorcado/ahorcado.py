@@ -66,6 +66,10 @@ class Ahorcado:
             self.codigo_estado = 1
         return self.codigo_estado
 
+    def get_codigo_estado(self):
+        """Retorna el codigo de estado de la partida."""
+        return self.codigo_estado
+
     def get_estado(self):
         """Retorna el estado actual de la partida."""
 
@@ -80,7 +84,9 @@ class Ahorcado:
         """Evalúa la palabra arriesgada. Retorna verdadero si es la correcta y falso si no lo es."""
         if palabra == self.palabra:
             self.estado = self.palabra
+            self.codigo_estado = 1
             return True
+        self.codigo_estado = -1
         return False
 
     def arriesgar_una_letra(self, letra):

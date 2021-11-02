@@ -42,7 +42,7 @@ setup(
     python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*",
     install_requires=[
         "behave>=1.2.6",
-        "PyHamcrest>=1.9",
+        # "PyHamcrest>=1.9",
         "parse>=1.8.2",
         "parse_type>=0.4.2",
         "six>=1.11.0",
