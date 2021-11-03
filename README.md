@@ -18,4 +18,6 @@ pip install -r py.requirements/all.txt
 ```
 
 #### Correr los tests unitarios y los tests de aceptación
-```tox```
+```
+tox
+```
