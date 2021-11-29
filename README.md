@@ -1,3 +1,4 @@
+![Tests](https://github.com/agustindangelo/ahorcado-tdd/actions/workflows/github-actions.yml/badge.svg)
 
 # Ejecutar la instalación
 
@@ -11,11 +12,14 @@ ng serve --open
 
 ### 1.2: backend
 ```
-python3 -m
+virtualenv --python python3.9 .venv
 source .venv/bin/activate
 python3 -m pip install requirements.txt
 flask run
+
 ```
+
+En windows se activa con ```.venv\Scripts\Activate.ps1```
 
 En el navegador: `localhost:4200`
 
