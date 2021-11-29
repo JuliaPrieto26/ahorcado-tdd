@@ -23,13 +23,13 @@
 
 <div class="container" *ngIf="partida.codigoEstado === 1">
   <p class="mat-display-2">🔥🔥Felicitaciones, ha ganado la partida.</p>
-  <a mat-raised-button href="newgame" color="primary" appearance="fill">
+  <button mat-raised-button (click)="playAgain()" color="primary" appearance="fill">
     Jugar otra vez
-  </a>
+  </button>
 </div>
 <div class="container" *ngIf="partida.codigoEstado === -1">
   <p class="mat-display-2">😢Ha perdido la partida.</p>
-  <a mat-raised-button href="newgame" color="primary" appearance="fill">
+  <button mat-raised-button (click)="playAgain()" color="primary" appearance="fill">
     Jugar otra vez
-  </a>
+  </button>
 </div>

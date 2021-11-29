@@ -43,4 +43,7 @@ export class GameComponent implements OnInit {
       }
     );
  }
+ playAgain(): void {
+   this.router.navigate(['/newgame']);
+ }
 }
