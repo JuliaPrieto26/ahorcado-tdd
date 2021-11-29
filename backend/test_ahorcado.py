@@ -76,7 +76,7 @@ class TestArriesgarLetra(unittest.TestCase):
         ahorcado.arriesgar_una_letra('n')
         ahorcado.arriesgar_una_letra('n')
         ahorcado.arriesgar_una_letra('n')
-        self.assertEqual(ahorcado.check_codigo_estado(), -1)
+        self.assertEqual(ahorcado.get_codigo_estado(), -1)
 
     def test_partida_ganada(self):
         ahorcado = Ahorcado()
@@ -88,7 +88,7 @@ class TestArriesgarLetra(unittest.TestCase):
         ahorcado.arriesgar_una_letra('l')
         ahorcado.arriesgar_una_letra('e')
         ahorcado.arriesgar_una_letra('s')
-        self.assertEqual(ahorcado.check_codigo_estado(), 1)
+        self.assertEqual(ahorcado.get_codigo_estado(), 1)
 
     def test_estado_a_mitad_de_partida(self):
         ahorcado = Ahorcado()
@@ -97,7 +97,7 @@ class TestArriesgarLetra(unittest.TestCase):
         ahorcado.arriesgar_una_letra('a')
         ahorcado.arriesgar_una_letra('g')
         self.assertEqual(ahorcado.get_estado(), '_ a _ a _ _ _')
-        self.assertEqual(ahorcado.check_codigo_estado(), 0)
+        self.assertEqual(ahorcado.get_codigo_estado(), 0)
 
     def test_estado_a_final_de_partida(self):
         ahorcado = Ahorcado()
@@ -110,7 +110,7 @@ class TestArriesgarLetra(unittest.TestCase):
         ahorcado.arriesgar_una_letra('e')
         ahorcado.arriesgar_una_letra('s')
         self.assertEqual(ahorcado.get_estado(), 'a g i l e s')
-        self.assertEqual(ahorcado.check_codigo_estado(), 1)
+        self.assertEqual(ahorcado.get_codigo_estado(), 1)
 
     def test_registrar_letras_erroneas(self):
         ahorcado = Ahorcado()
@@ -121,7 +121,7 @@ class TestArriesgarLetra(unittest.TestCase):
         ahorcado.arriesgar_una_letra('r')
         ahorcado.arriesgar_una_letra('p')
         self.assertEqual(ahorcado.get_letras_erroneas(), 'n r p')
-        self.assertEqual(ahorcado.check_codigo_estado(), 0)
+        self.assertEqual(ahorcado.get_codigo_estado(), 0)
 
 if __name__ == '__main__':
     unittest.main()
