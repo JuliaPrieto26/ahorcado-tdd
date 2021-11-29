@@ -12,7 +12,13 @@ class Ahorcado:
 
     def __init__(self):
         """Inicializa una nueva partida de ahorcado."""
-
+        self.palabra = ''
+        self.letras_adivinadas = []
+        self.cantidad_aciertos = 0
+        self.cantidad_errores = 0
+        self.codigo_estado = 0
+        self.estado = []
+        self.letras_erroneas = []
         self.nombre = None
 
     def inicializar_partida(self):
