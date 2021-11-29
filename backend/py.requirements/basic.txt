@@ -8,6 +8,8 @@
 
 # -- BEHAVE-RELATED:
 behave >= 1.2.6
+flask
+flask_restful
 
 PyHamcrest <2.0.0;    python_version <  '3.5'
 PyHamcrest >= 2.0.2;  python_version >= '3.5'

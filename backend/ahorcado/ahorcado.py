@@ -14,6 +14,9 @@ class Ahorcado:
         """Inicializa una nueva partida de ahorcado."""
 
         self.nombre = None
+
+    def inicializar_partida(self):
+        """Inicializa la partida."""
         self.palabra = ''
         self.letras_adivinadas = []
         self.cantidad_aciertos = 0
@@ -27,9 +30,20 @@ class Ahorcado:
         return self.nombre
 
     def set_palabra(self, palabra):
-        """Establece la palabra a adivinar en la partida actual."""
+        """Establece la palabra a adivinar convirtiendola a minúsculas."""
+        if len(palabra) < 3:
+            raise Exception('La palabra debe tener al menos 3 caracteres.')
+        elif len(palabra) > 20:
+            raise Exception('La palabra no debe tener más de 20 caracteres.')
+        if not palabra.isalpha():
+            raise Exception('La palabra no debe contener símbolos.')
+
         self.palabra = palabra.lower()
         self.estado = ['_' for _ in range(len(self.palabra))]
+
+    def get_palabra(self):
+        """Retorna la palabra a adivinar de la partida."""
+        return self.palabra
 
     def login(self, nombre):
         """
@@ -52,7 +66,7 @@ class Ahorcado:
 
         return self.cantidad_aciertos, self.cantidad_errores
 
-    def check_codigo_estado(self):
+    def get_codigo_estado(self):
         """
         Retorna el codigo de estado actual de la partida.
             -1 --> la partida está perdida
@@ -64,10 +78,6 @@ class Ahorcado:
             self.codigo_estado = -1
         elif self.cantidad_aciertos == len(self.palabra):
             self.codigo_estado = 1
-        return self.codigo_estado
-
-    def get_codigo_estado(self):
-        """Retorna el codigo de estado de la partida."""
         return self.codigo_estado
 
     def get_estado(self):
