@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="mat-title">Bienvenido, {{name}}</h1>
+  <h3 class="mat-headline">Ingresa la palabra a adivinar</h3>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Palabra a adivinar</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'" #wordToGuess>
+      <button  mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+  </mat-form-field>
+
+  <p style="color: red">{{errorMessage}}</p>
+  <div>
+    <button class="customButton" mat-raised-button color="primary" (click)="initializeGame(wordToGuess.value)" appearance="fill">Jugar</button>
+  </div>
+</div>
