@@ -1,4 +1,4 @@
-name: Github Actions for testing and linting
+name: Tests
 on: [push]
 jobs:
   tests_and_linting:
@@ -15,20 +15,19 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install tox tox-gh-actions
-      - name: Install requirements
+     - name: Install requirements
         uses: BSFishy/pip-action@v1
         with:
-          requirements: backend/py.requirements/all.txt
-      - name: Test with tox
+          requirements: backend/requirements.txt
+      - name: Unit tests
         working-directory: ./backend
-        run: tox
+        run: python test_ahorcado.py
+      - name: Acceptance tests
+        working-directory: ./backend
+        run: behave
       - name: Run static code analyzer on Ahorcado package
         working-directory: ./backend
         run: pylint --exit-zero src
       - name: Run static code analyzer on unit tests
         working-directory: ./backend
-        run: pylint --exit-zero tests/test_ahorcado.py
+        run: pylint --exit-zero test_ahorcado.py
