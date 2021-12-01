@@ -2,11 +2,11 @@
   <h1 class="mat-title">Ingrese su nombre</h1>
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Nombre</mat-label>
-    <input matInput type="text" #name>
+    <input matInput type="text" #name id="nameInput">
   </mat-form-field>
 
   <p style="color: red">{{errorMessage}}</p>
   <div>
-    <button mat-raised-button color="primary" (click)="login(name.value)">Ingresar</button>
+    <button mat-raised-button color="primary" (click)="login(name.value)" id="ingresarButton">Ingresar</button>
   </div>
 </div>
