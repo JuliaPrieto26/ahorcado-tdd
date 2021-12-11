@@ -1,1 +1,1 @@
-export const API_URL = 'https://ahorcado-agil-api.herokuapp.com';
+export const API_URL = 'https://ahorcado-api.herokuapp.com';
