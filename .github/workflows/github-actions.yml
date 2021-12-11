@@ -31,25 +31,3 @@ jobs:
       - name: Run static code analyzer on unit tests
         working-directory: ./backend
         run: pylint --exit-zero test_ahorcado.py
-  deploy:
-    runs-on: ubuntu-latest
-    needs: tests_and_linting
-    steps:
-    - uses: actions/checkout@v2
-    - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-      with:
-        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-        heroku_app_name: "ahorcado-agil-api" #Must be unique in Heroku
-        heroku_email: "dangeloagustinariel@gmail.com"
-        procfile: "web: gunicorn app:app -w 1 --threads 1"
-      env:
-        HD_APP_BASE: "backend"
-    - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-      with:
-        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-        heroku_app_name: "ahorcado-agil" #Must be unique in Heroku
-        heroku_email: "dangeloagustinariel@gmail.com"
-        procfile: "web: node server.js"
-      env:
-        HD_APP_BASE: "frontend"
-        HD_ANGULAR_APP_API_URL: "https://ahorcado-agil-api.herokuapp.com"
