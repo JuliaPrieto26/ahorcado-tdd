@@ -1,8 +1,6 @@
 ![Tests](https://github.com/agustindangelo/ahorcado-tdd/actions/workflows/github-actions.yml/badge.svg)
 
-# Ejecutar la instalación
-
-## Opción 1: entorno local
+# Instalación en el entorno local
 ### 1.1: frontend
 ```
 cd frontend
@@ -14,7 +12,7 @@ ng serve --open
 ```
 virtualenv --python python3.9 .venv
 source .venv/bin/activate
-python3 -m pip install requirements.txt
+python3 -m pip install -r requirements.txt
 flask run
 
 ```
