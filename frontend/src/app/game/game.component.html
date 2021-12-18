@@ -1,16 +1,23 @@
 <div class="container" style="display: flex; flex-grow: 1">
   <div class="container">
       <h1> 🎮   {{partida.estado}}</h1>
-      <h3> ✅  Letras acertadas: {{partida.aciertos}}</h3>
-      <h3> ❌  Errores: {{partida.errores}}</h3>
+      <h3 id="cantidad-aciertos"> ✅  Letras acertadas: {{partida.aciertos}}</h3>
+      <h3 id="cantidad-errores"> ❌  Errores: {{partida.errores}}</h3>
   </div>
 
   <div class="container">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Arriesgar</mat-label>
-      <input matInput  type="text" #arriesgarInput [disabled]="partida.codigoEstado !== 0">
+      <input matInput id="arriesgarInput" type="text" #arriesgarInput [disabled]="partida.codigoEstado !== 0">
     </mat-form-field>
-    <button mat-raised-button color="accent" (click)="arriesgar(arriesgarInput.value); arriesgarInput.value=''" appearance="fill" [disabled]="partida.codigoEstado !== 0">
+    <button
+      id="arriesgarButton"
+      mat-raised-button
+      color="accent"
+      (click)="arriesgar(arriesgarInput.value); arriesgarInput.value=''"
+      appearance="fill"
+      [disabled]="partida.codigoEstado !== 0"
+    >
       Arriesgar
     </button>
   </div>
@@ -22,13 +29,13 @@
 </div>
 
 <div class="container" *ngIf="partida.codigoEstado === 1">
-  <p class="mat-display-2">🔥🔥Felicitaciones, ha ganado la partida.</p>
+  <p id="resultado" class="mat-display-2">🔥🔥Felicitaciones, ha ganado la partida.</p>
   <button mat-raised-button (click)="playAgain()" color="primary" appearance="fill">
     Jugar otra vez
   </button>
 </div>
 <div class="container" *ngIf="partida.codigoEstado === -1">
-  <p class="mat-display-2">😢Ha perdido la partida.</p>
+  <p id="resultado" class="mat-display-2">😢Ha perdido la partida.</p>
   <button mat-raised-button (click)="playAgain()" color="primary" appearance="fill">
     Jugar otra vez
   </button>

@@ -4,14 +4,14 @@
 
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Palabra a adivinar</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'" #wordToGuess>
-      <button  mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    <input id="wordToGuessInput" matInput [type]="hide ? 'password' : 'text'" #wordToGuess>
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
   </mat-form-field>
 
   <p style="color: red">{{errorMessage}}</p>
   <div>
-    <button class="customButton" mat-raised-button color="primary" (click)="initializeGame(wordToGuess.value)" appearance="fill">Jugar</button>
+    <button id="playButton" class="customButton" mat-raised-button color="primary" (click)="initializeGame(wordToGuess.value)" appearance="fill">Jugar</button>
   </div>
 </div>

@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-// import 'rxjs/add/operator/catch';
 import { catchError, retry } from 'rxjs/operators';
-import { API_URL } from '../env';
+import { environment } from '../environments/environment';
 import { Partida } from './models/Partida';
 
 @Injectable({
@@ -11,26 +10,28 @@ import { Partida } from './models/Partida';
 })
 
 export class AhorcadoService {
+  // API_URL: String;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   login(name: String): Observable<any> {
     return this.http
-      .post(`${API_URL}/login`, {name})
+      .post(`${environment.API_URL}/login`, {name})
   }
 
   initialize(wordToGuess: String): Observable<any> {
     return this.http
-      .post(`${API_URL}/initialize`, {wordToGuess})
+      .post(`${environment.API_URL}/initialize`, {wordToGuess})
   }
 
   getState(): Observable<Partida> {
     return this.http
-      .get(`${API_URL}/get_state`)
+      .get(`${environment.API_URL}/get_state`)
   }
 
   arriesgar(userInput: String): Observable<Partida> {
     return this.http
-      .post(`${API_URL}/arriesgar`, { userInput })
+      .post(`${environment.API_URL}/arriesgar`, { userInput })
   }
 }
