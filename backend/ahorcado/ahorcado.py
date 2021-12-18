@@ -98,7 +98,7 @@ class Ahorcado:
 
     def arriesgar_una_palabra(self, palabra):
         """Evalúa la palabra arriesgada. Retorna verdadero si es la correcta y falso si no lo es."""
-        if palabra == self.palabra:
+        if palabra.lower() == self.palabra:
             self.estado = self.palabra
             self.codigo_estado = 1
             return True
