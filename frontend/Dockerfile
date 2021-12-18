@@ -1,4 +1,4 @@
-FROM node:17-alpine as build-step
+FROM node:16-alpine as build-step
 
 RUN mkdir -p /app
 
@@ -10,8 +10,8 @@ RUN npm install
 
 COPY . /app
 
-RUN npm run build --prod
+RUN npm run build
 
 FROM nginx:1.21.4-alpine
-	#Si estas utilizando otra aplicacion cambia PokeApp por el nombre de tu app
+
 COPY --from=build-step /app/dist/ahorcado /usr/share/nginx/html

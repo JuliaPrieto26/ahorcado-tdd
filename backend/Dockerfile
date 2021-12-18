@@ -42,6 +42,7 @@ WORKDIR /app
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
+RUN pip install --upgrade pip
 
 COPY . .
-CMD [ "python", "-m" , "flask", "run", "--host=0.0.0.0"]
+CMD ["gunicorn", "app:app" , "--workers=1", "--threads=1"]

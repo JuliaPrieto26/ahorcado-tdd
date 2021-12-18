@@ -23,7 +23,7 @@ from setuptools import find_packages, setup
 # CONFIGURATION:
 # -----------------------------------------------------------------------------
 description = """\
-    Aplicación de TDD y ATDD al clásico juego del ahorcado.
+    API para el juego del ahorcado
 """
 
 # -----------------------------------------------------------------------------
@@ -42,7 +42,6 @@ setup(
     python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*",
     install_requires=[
         "behave>=1.2.6",
-        # "PyHamcrest>=1.9",
         "parse>=1.8.2",
         "parse_type>=0.4.2",
         "six>=1.11.0",
