@@ -3,6 +3,7 @@ astroid==2.9.0
 backports.entry-points-selectable==1.1.1
 behave==1.2.6
 click==8.0.3
+coverage==6.2
 distlib==0.3.3
 filelock==3.4.0
 Flask==2.0.2
