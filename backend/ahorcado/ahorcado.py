@@ -45,7 +45,7 @@ class Ahorcado:
             raise Exception('La palabra no debe contener símbolos.')
 
         self.palabra = palabra.lower()
-        self.estado = ['_' for _ in range(len(self.palabra))]
+        self.estado = ['_,' for _ in range(len(self.palabra))]
 
     def get_palabra(self):
         """Retorna la palabra a adivinar de la partida."""
