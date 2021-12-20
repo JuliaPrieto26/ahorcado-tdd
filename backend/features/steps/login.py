@@ -5,6 +5,10 @@ from ahorcado.ahorcado import Ahorcado
 def step_impl(context):
     context.ahorcado = Ahorcado()
 
+@given('"{text}" ingresa su nombre')
+def step_impl(context, text):
+    context.ahorcado.login(text)
+
 @when('"{text}" ingresa su nombre')
 def step_impl(context, text):
     context.ahorcado.login(text)
