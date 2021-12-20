@@ -41,7 +41,7 @@ class TestArriesgarPalabra(unittest.TestCase):
         ahorcado = Ahorcado()
         ahorcado.login('juan')
         ahorcado.set_palabra('agiles')
-        self.assertTrue(ahorcado.arriesgar_una_palabra('agiles --')) ## 0
+        self.assertTrue(ahorcado.arriesgar_una_palabra('agiles'))
 
 class TestArriesgarLetra(unittest.TestCase):
 
