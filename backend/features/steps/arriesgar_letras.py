@@ -1,6 +1,7 @@
 from behave import *
 from ahorcado.ahorcado import Ahorcado
 import features.steps.login
+import features.steps.common
 
 @when('el usuario arriesga la letra "{letra}"')
 def step_impl(context, letra):
