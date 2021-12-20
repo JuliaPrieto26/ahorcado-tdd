@@ -5,14 +5,14 @@ Feature: arriesgar palabras
 
   Scenario: la palabra arriesgada es la correcta
     Given hemos inicializado una partida
-    And "Juan" ingresa su nombre
+    And "Juan" ha ingresado su nombre
     And la palabra a adivinar es "agiles"
     When el usuario arriesga la palabra "agiles"
     Then el usuario habrá ganado la partida
 
   Scenario: la palabra arriesgada es incorrecta
     Given hemos inicializado una partida
-    And "Juan" ingresa su nombre
+    And "Juan" ha ingresado su nombre
     And la palabra a adivinar es "agiles"
     When el usuario arriesga la palabra "agilidad"
     Then el usuario habrá perdido la partida

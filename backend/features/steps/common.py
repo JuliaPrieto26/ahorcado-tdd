@@ -1,7 +1,11 @@
 from behave import *
 from ahorcado.ahorcado import Ahorcado
 
-@when('"{text}" ingresa su nombre')
+@when('"{text}" ha ingresado su nombre')
+def step_impl(context, text):
+    context.ahorcado.login(text)
+
+@given('"{text}" ha ingresado su nombre')
 def step_impl(context, text):
     context.ahorcado.login(text)
 

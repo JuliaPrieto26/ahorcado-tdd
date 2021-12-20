@@ -5,5 +5,5 @@ Feature: login
 
   Scenario: logueo satisfactorio
     Given hemos inicializado una partida
-    When "Juan" ingresa su nombre
+    And "Juan" ha ingresado su nombre
     Then podre ver que su nombre es "Juan"

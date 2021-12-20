@@ -9,7 +9,7 @@ def step_impl(context, text):
 
 @then('el usuario habrá perdido la partida')
 def step_impl(context):
-    assert context.ahorcado.get_codigo_estado() == 10
+    assert context.ahorcado.get_codigo_estado() == -1
 
 @then('el usuario habrá ganado la partida')
 def step_impl(context):
