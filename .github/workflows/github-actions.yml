@@ -27,7 +27,7 @@ jobs:
         run: behave
       - name: Run static code analyzer on Ahorcado package
         working-directory: ./backend
-        run: pylint --exit-zero src
+        run: pylint --exit-zero ahorcado
       - name: Run static code analyzer on unit tests
         working-directory: ./backend
         run: pylint --exit-zero test_ahorcado.py
